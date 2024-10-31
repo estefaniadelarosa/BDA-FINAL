@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20.5px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 35px !important;
+  margin-left: 50px;
+}
+
+/* Esto cambia la indentación del icono del menú */
+.hamburger {
+  font-size: 35px;
+  cursor: pointer;
+  line-height: 55px;
+  margin-top: 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.button {
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 12px 4px 0; /* Esto cambia la altura del botón(es) */
+  cursor: pointer;
+  width: 190px;
+  height: 40px;
+  font-family: "Lato", sans-serif;
+}
+
+/* Esto cambia la curvatura del botón*/
+.button1 {border-radius: 30px;}
+.button2 {border-radius: 30px;}
+
+/* Esto cambia la altura del texto */
+.button1 {line-height: 0px;}
+.button2 {line-height: 0px;}
+
+/* Botón justo a la derecha */
+.button-container {
+  position: absolute;
+  top: 1;
+  right: 0;
+  display: flex;
+}
+
+.scrolling-text {
+  position: relative;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-left 50s linear infinite;
+  font-size: 150px;
+  z-index: 10;
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+@keyframes scroll-left {
+  from {
+    left: 100%;
+    width: 500%;
+  }
+  to {
+    left: -100%;
+    width: 500%;
+  }
+}
+
+.map-container {
+  position: relative;
+  text-align: center;
+  margin-top: 180px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="button-container">
+  <button class="button button1">Reservar</button>
+  <button class="button button2">Inicio de Sesi&oacute;n</button>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="dashboard_inicio.html">Inicio</a> 
+  <a href="menu.html">Men&uacute;</a> <!-- menu.html -->
+  <a href="#">Promociones</a>
+  <a href="#">Últimos pedidos</a>
+  <a href="#">Reseñas</a>
+  <a href="#">Soporte</a>
+</div>
+
+<span class="hamburger" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function scrollleft(){
+  document.getElementById("scrolling-text").style.left = '100%';
+  setTimeout(scrollleft, 25);
+}
+scrollleft();
+</script>
+
+<div style="text-align: center; margin-top: 110px;">
+  <img src="https://images.prismic.io/familiaarboleda/bb4a419c-47ec-4303-9e32-7825625580cd_sra_tanaka-removebg-preview.png?auto=compress,format" alt="Señora Tanaka" width="290">
+</div>
+
+<div class="map-container">
+  <hr>
+  <div class="scrolling-text" id="scrolling-text">
+    WHERE ARE WE? WHERE ARE WE? WHERE ARE WE? WHERE ARE WE? WHERE ARE WE? 
+  </div>
+  <div style="text-align: center;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.65709585046!2d-100.35866502514628!3d25.649503877422596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bde745820cc3%3A0xda90aed3e9456939!2sSe%C3%B1ora%20Tanaka%20Monterrey!5e0!3m2!1ses!2smx!4v1730314799096!5m2!1ses!2smx" width="600" height="270" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<div style="text-align: center; margin-bottom: 110px;">
+  <p style="font-family: 'Lato', sans-serif;">Av. del Roble 660-l-102, Valle del Campestre, 66265 San Pedro Garza García, N.L.</p>
+  <p style="font-family: 'Lato', sans-serif;">CALL US: (81) 2718 8980</p>
+</div>
+
+</body>
+</html> 
